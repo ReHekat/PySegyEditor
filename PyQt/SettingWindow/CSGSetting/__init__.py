@@ -19,11 +19,11 @@ class CSGSetting(QDialog):
 
     def ui_update(self, CSG_ALL_LIST):
         for item in CSG_ALL_LIST:
-            self.ui.comboBox_DepthEdit.addItem(str(int(item)))
+            self.ui.comboBox_DepthEdit.addItem(str(float(item)))
 
     def accept(self):
         csg_UiParas = CSGTraceUiParas()
-        csg_UiParas.depth = int(self.ui.comboBox_DepthEdit.currentText())
+        csg_UiParas.depth = float(self.ui.comboBox_DepthEdit.currentText())
         # sourceDepth_Unit = self.ui.comboBox_Depth.currentText()
         csg_UiParas.gain = float(self.ui.GainEdit.text())
         #csg_UiParas.showNum = int(self.ui.ShowNumEdit.text())

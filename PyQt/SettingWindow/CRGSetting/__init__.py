@@ -19,11 +19,11 @@ class CRGSetting(QDialog):
 
     def ui_update(self, CRG_ALL_LIST):
         for item in CRG_ALL_LIST:
-            self.ui.comboBox_DepthEdit.addItem(str(int(item)))
+            self.ui.comboBox_DepthEdit.addItem(str(float(item)))
 
     def accept(self):
         crg_UiParas = CRGTraceUiParas()
-        crg_UiParas.depth = int(self.ui.comboBox_DepthEdit.currentText())
+        crg_UiParas.depth = float(self.ui.comboBox_DepthEdit.currentText())
         # receiverDepth_Unit = self.ui.comboBox_ReceiverDepth.currentText()
         crg_UiParas.gain = float(self.ui.GainEdit.text())
         #crg_UiParas.showNum = int(self.ui.ShowNumEdit.text())
