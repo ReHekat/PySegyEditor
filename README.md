@@ -5,3 +5,5 @@
 >  1.SEGY 2D显示与编辑（基于Matplotlib）  
 >  2.Filter滤波处理  
 >  3.CRG、CSG显示  
+>  4.FFT变换
+>  5.数据导出  
