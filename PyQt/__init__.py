@@ -79,6 +79,13 @@ class SeismicPlotMainWindow(QMainWindow):
         self.ui.action_Freq_Segy.triggered.connect(self.exportFreq)
         self.ui.actionAcoustic.triggered.connect(self.exportAcoustic)
         self.ui.actionElastic.triggered.connect(self.exportElastic)
+        self.exportDialog.signal.connect(self.exportAcoustic_ok_clicked)
+        self.singleTraceDialog.signal.connect(self.singleTrace_ok_clicked)
+        self.tracesDialog.signal.connect(self.traces_ok_clicked)
+        self.allTracesDialog.signal.connect(self.allTraces_ok_clicked)
+        self.CRGDialog.signal.connect(self.CRG_ok_clicked)
+        self.CSGDialog.signal.connect(self.CSG_ok_clicked)
+        self.bandPassFilterDialog.signal.connect(self.filter_ok_clicked)
 
     # <editor-fold desc="UI函数">
     def ui_init(self, enable):
@@ -223,42 +230,28 @@ class SeismicPlotMainWindow(QMainWindow):
     def exportAcoustic(self):
         self.exportDialog.show()
         self.exportDialog.ui_update("acoustic", self.sourceAllList, self.receiverAllList)
-        # 连接信号
-        self.exportDialog.signal.connect(self.exportAcoustic_ok_clicked)
 
     def exportElastic(self):
         self.exportDialog.show()
         self.exportDialog.ui_update("elastic", self.sourceAllList, self.receiverAllList)
-        # 连接信号
-        self.exportDialog.signal.connect(self.exportAcoustic_ok_clicked)
 
     def info(self):
         self.infoDialog.show()
 
     def pushButton_SingleTrace_clicked(self):
         self.singleTraceDialog.show()
-        # 连接信号
-        self.singleTraceDialog.signal.connect(self.singleTrace_ok_clicked)
 
     def pushButton_Traces_clicked(self):
         self.tracesDialog.show()
-        # 连接信号
-        self.tracesDialog.signal.connect(self.traces_ok_clicked)
 
     def pushButton_AllTraces_clicked(self):
         self.allTracesDialog.show()
-        # 连接信号
-        self.allTracesDialog.signal.connect(self.allTraces_ok_clicked)
 
     def pushButton_CRG_clicked(self):
         self.CRGDialog.show()
-        # 连接信号
-        self.CRGDialog.signal.connect(self.CRG_ok_clicked)
 
     def pushButton_CSG_clicked(self):
         self.CSGDialog.show()
-        # 连接信号
-        self.CSGDialog.signal.connect(self.CSG_ok_clicked)
 
     def okButton_clicked(self):
         scale = self.ui.lineEdit.text()
@@ -281,8 +274,6 @@ class SeismicPlotMainWindow(QMainWindow):
         paras = self.getCurrentParas()
         paras.bfilter = self.ui.checkBox_filter.checkState()
         if paras.bfilter:
-            # 连接信号
-            self.bandPassFilterDialog.signal.connect(self.filter_ok_clicked)
             state = self.bandPassFilterDialog.exec()
             if not state:
                 self.ui.checkBox_filter.setCheckState(not self.ui.checkBox_filter.checkState())
@@ -336,6 +327,7 @@ class SeismicPlotMainWindow(QMainWindow):
             else:
                 pass
             self.waitingDialog.close()
+
     # </editor-fold>
     # </editor-fold>
 

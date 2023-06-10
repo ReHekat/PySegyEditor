@@ -52,6 +52,7 @@ class SegyEditor:
         while not self.resFlag:
             QCoreApplication.processEvents()
 
+    # export_elastic函数并未使用，两种文件导出共用 export_acoustic
     def export_elastic(self, paras):
         self.resFlag = False
         self.thread1 = EditorThread.ExportAcousticThread(paras, self.fSegyFile)
