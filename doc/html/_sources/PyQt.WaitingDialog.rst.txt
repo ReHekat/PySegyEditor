@@ -1,0 +1,21 @@
+PyQt.WaitingDialog package
+==========================
+
+Submodules
+----------
+
+PyQt.WaitingDialog.WaitingDialog module
+---------------------------------------
+
+.. automodule:: PyQt.WaitingDialog.WaitingDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: PyQt.WaitingDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:

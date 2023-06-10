@@ -1,0 +1,29 @@
+PyQt.SegyEditor package
+=======================
+
+Submodules
+----------
+
+PyQt.SegyEditor.EditorThread module
+-----------------------------------
+
+.. automodule:: PyQt.SegyEditor.EditorThread
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PyQt.SegyEditor.TraceInfo module
+--------------------------------
+
+.. automodule:: PyQt.SegyEditor.TraceInfo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: PyQt.SegyEditor
+   :members:
+   :undoc-members:
+   :show-inheritance:

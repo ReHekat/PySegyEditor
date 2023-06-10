@@ -1,0 +1,21 @@
+PyQt.ExportDialog package
+=========================
+
+Submodules
+----------
+
+PyQt.ExportDialog.ExportDialog module
+-------------------------------------
+
+.. automodule:: PyQt.ExportDialog.ExportDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: PyQt.ExportDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:

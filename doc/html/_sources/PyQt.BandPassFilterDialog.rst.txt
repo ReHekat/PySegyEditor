@@ -1,0 +1,21 @@
+PyQt.BandPassFilterDialog package
+=================================
+
+Submodules
+----------
+
+PyQt.BandPassFilterDialog.BandPassFilterDialog module
+-----------------------------------------------------
+
+.. automodule:: PyQt.BandPassFilterDialog.BandPassFilterDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: PyQt.BandPassFilterDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:

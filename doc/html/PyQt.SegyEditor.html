@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyQt.SegyEditor package &mdash; PySegyEditor 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PySegyEditor
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">PyQt.SegyEditor package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-PyQt.SegyEditor.EditorThread">PyQt.SegyEditor.EditorThread module</a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.EditorThread.ExportAcousticThread"><code class="docutils literal notranslate"><span class="pre">ExportAcousticThread</span></code></a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.EditorThread.ExportAcousticThread.resSignal"><code class="docutils literal notranslate"><span class="pre">ExportAcousticThread.resSignal</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.EditorThread.ExportAcousticThread.run"><code class="docutils literal notranslate"><span class="pre">ExportAcousticThread.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread"><code class="docutils literal notranslate"><span class="pre">ExportFreqSegyThread</span></code></a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.resSignal"><code class="docutils literal notranslate"><span class="pre">ExportFreqSegyThread.resSignal</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.run"><code class="docutils literal notranslate"><span class="pre">ExportFreqSegyThread.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-PyQt.SegyEditor.TraceInfo">PyQt.SegyEditor.TraceInfo module</a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.TraceInfo.TracesInfo"><code class="docutils literal notranslate"><span class="pre">TracesInfo</span></code></a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.TraceInfo.TracesInfo.getReceiverInfo"><code class="docutils literal notranslate"><span class="pre">TracesInfo.getReceiverInfo()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceInfo"><code class="docutils literal notranslate"><span class="pre">TracesInfo.getSourceInfo()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceNum"><code class="docutils literal notranslate"><span class="pre">TracesInfo.getSourceNum()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-PyQt.SegyEditor">Module contents</a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor"><code class="docutils literal notranslate"><span class="pre">SegyEditor</span></code></a><ul>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor.CRG_CSG_init"><code class="docutils literal notranslate"><span class="pre">SegyEditor.CRG_CSG_init()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor.export_acoustic"><code class="docutils literal notranslate"><span class="pre">SegyEditor.export_acoustic()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor.export_elastic"><code class="docutils literal notranslate"><span class="pre">SegyEditor.export_elastic()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor.export_freq_segy"><code class="docutils literal notranslate"><span class="pre">SegyEditor.export_freq_segy()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor.open"><code class="docutils literal notranslate"><span class="pre">SegyEditor.open()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SegyEditor.SegyEditor.resSlot"><code class="docutils literal notranslate"><span class="pre">SegyEditor.resSlot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySegyEditor</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PyQt.SegyEditor package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/PyQt.SegyEditor.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pyqt-segyeditor-package">
+<h1>PyQt.SegyEditor package<a class="headerlink" href="#pyqt-segyeditor-package" title="此标题的永久链接"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="此标题的永久链接"></a></h2>
+</section>
+<section id="module-PyQt.SegyEditor.EditorThread">
+<span id="pyqt-segyeditor-editorthread-module"></span><h2>PyQt.SegyEditor.EditorThread module<a class="headerlink" href="#module-PyQt.SegyEditor.EditorThread" title="此标题的永久链接"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.EditorThread.ExportAcousticThread">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt.SegyEditor.EditorThread.</span></span><span class="sig-name descname"><span class="pre">ExportAcousticThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paras</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.EditorThread.ExportAcousticThread" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">QThread</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.EditorThread.ExportAcousticThread.resSignal">
+<span class="sig-name descname"><span class="pre">resSignal</span></span><a class="headerlink" href="#PyQt.SegyEditor.EditorThread.ExportAcousticThread.resSignal" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.EditorThread.ExportAcousticThread.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.EditorThread.ExportAcousticThread.run" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.EditorThread.ExportFreqSegyThread">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt.SegyEditor.EditorThread.</span></span><span class="sig-name descname"><span class="pre">ExportFreqSegyThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">QThread</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.resSignal">
+<span class="sig-name descname"><span class="pre">resSignal</span></span><a class="headerlink" href="#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.resSignal" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.run" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-PyQt.SegyEditor.TraceInfo">
+<span id="pyqt-segyeditor-traceinfo-module"></span><h2>PyQt.SegyEditor.TraceInfo module<a class="headerlink" href="#module-PyQt.SegyEditor.TraceInfo" title="此标题的永久链接"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.TraceInfo.TracesInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt.SegyEditor.TraceInfo.</span></span><span class="sig-name descname"><span class="pre">TracesInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceList</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiverList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.TraceInfo.TracesInfo" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.TraceInfo.TracesInfo.getReceiverInfo">
+<span class="sig-name descname"><span class="pre">getReceiverInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceDepth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.TraceInfo.TracesInfo.getReceiverInfo" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceInfo">
+<span class="sig-name descname"><span class="pre">getSourceInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceInfo" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceNum">
+<span class="sig-name descname"><span class="pre">getSourceNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceNum" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-PyQt.SegyEditor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-PyQt.SegyEditor" title="此标题的永久链接"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt.SegyEditor.</span></span><span class="sig-name descname"><span class="pre">SegyEditor</span></span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor.CRG_CSG_init">
+<span class="sig-name descname"><span class="pre">CRG_CSG_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor.CRG_CSG_init" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor.export_acoustic">
+<span class="sig-name descname"><span class="pre">export_acoustic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor.export_acoustic" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor.export_elastic">
+<span class="sig-name descname"><span class="pre">export_elastic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor.export_elastic" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor.export_freq_segy">
+<span class="sig-name descname"><span class="pre">export_freq_segy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor.export_freq_segy" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor.open" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SegyEditor.SegyEditor.resSlot">
+<span class="sig-name descname"><span class="pre">resSlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SegyEditor.SegyEditor.resSlot" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, XuYang.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

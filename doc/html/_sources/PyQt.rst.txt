@@ -1,0 +1,33 @@
+PyQt package
+============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   PyQt.BandPassFilterDialog
+   PyQt.ExportDialog
+   PyQt.InfoDialog
+   PyQt.SegyEditor
+   PyQt.WaitingDialog
+
+Submodules
+----------
+
+PyQt.MainWindow module
+----------------------
+
+.. automodule:: PyQt.MainWindow
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: PyQt
+   :members:
+   :undoc-members:
+   :show-inheritance:

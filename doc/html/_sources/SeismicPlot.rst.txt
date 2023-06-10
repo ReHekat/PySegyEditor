@@ -1,0 +1,10 @@
+SeismicPlot package
+===================
+
+Module contents
+---------------
+
+.. automodule:: SeismicPlot
+   :members:
+   :undoc-members:
+   :show-inheritance:

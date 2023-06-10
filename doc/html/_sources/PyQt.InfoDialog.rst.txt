@@ -1,0 +1,21 @@
+PyQt.InfoDialog package
+=======================
+
+Submodules
+----------
+
+PyQt.InfoDialog.Dialog\_info module
+-----------------------------------
+
+.. automodule:: PyQt.InfoDialog.Dialog_info
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: PyQt.InfoDialog
+   :members:
+   :undoc-members:
+   :show-inheritance:

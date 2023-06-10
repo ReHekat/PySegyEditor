@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiParameter package &mdash; PySegyEditor 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PySegyEditor
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">UiParameter package</a><ul>
+<li><a class="reference internal" href="#module-UiParameter">Module contents</a><ul>
+<li><a class="reference internal" href="#UiParameter.AllTracesTraceUiParas"><code class="docutils literal notranslate"><span class="pre">AllTracesTraceUiParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.BandPassFilterParas"><code class="docutils literal notranslate"><span class="pre">BandPassFilterParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.CRGTraceUiParas"><code class="docutils literal notranslate"><span class="pre">CRGTraceUiParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.CSGTraceUiParas"><code class="docutils literal notranslate"><span class="pre">CSGTraceUiParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.ExportAcousticUiParas"><code class="docutils literal notranslate"><span class="pre">ExportAcousticUiParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.SingleTraceUiParas"><code class="docutils literal notranslate"><span class="pre">SingleTraceUiParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.TraceUiParas"><code class="docutils literal notranslate"><span class="pre">TraceUiParas</span></code></a></li>
+<li><a class="reference internal" href="#UiParameter.TracesTraceUiParas"><code class="docutils literal notranslate"><span class="pre">TracesTraceUiParas</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySegyEditor</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">UiParameter package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/UiParameter.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uiparameter-package">
+<h1>UiParameter package<a class="headerlink" href="#uiparameter-package" title="此标题的永久链接"></a></h1>
+<section id="module-UiParameter">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-UiParameter" title="此标题的永久链接"></a></h2>
+<p>各种Ui参数</p>
+<p>用于各模块和界面之间的参数传递</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.AllTracesTraceUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">AllTracesTraceUiParas</span></span><a class="headerlink" href="#UiParameter.AllTracesTraceUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#UiParameter.TraceUiParas" title="UiParameter.TraceUiParas"><code class="xref py py-class docutils literal notranslate"><span class="pre">TraceUiParas</span></code></a></p>
+<p>绘制所有测线，可以设定只显示其中多少条，以加快wiggle图绘制速度</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.BandPassFilterParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">BandPassFilterParas</span></span><a class="headerlink" href="#UiParameter.BandPassFilterParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self.A_stop</strong> – 阻带衰减 (dB)</p></li>
+<li><p><strong>self.F_stop1</strong> – 阻带边缘 (Hz)</p></li>
+<li><p><strong>self.F_pass1</strong> – 通带边缘 (Hz)</p></li>
+<li><p><strong>self.F_pass2</strong> – 通带的关闭边缘 (Hz)</p></li>
+<li><p><strong>self.F_stop2</strong> – 第二个阻带的边缘 (Hz)</p></li>
+<li><p><strong>self.A_pass</strong> – 通带中允许的纹波量 (dB)</p></li>
+<li><p><strong>self.fs</strong> – 采样率</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.CRGTraceUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">CRGTraceUiParas</span></span><a class="headerlink" href="#UiParameter.CRGTraceUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#UiParameter.TraceUiParas" title="UiParameter.TraceUiParas"><code class="xref py py-class docutils literal notranslate"><span class="pre">TraceUiParas</span></code></a></p>
+<p>绘制CRG Wiggle图</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.CSGTraceUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">CSGTraceUiParas</span></span><a class="headerlink" href="#UiParameter.CSGTraceUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#UiParameter.TraceUiParas" title="UiParameter.TraceUiParas"><code class="xref py py-class docutils literal notranslate"><span class="pre">TraceUiParas</span></code></a></p>
+<p>绘制CSG Wiggle图</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.ExportAcousticUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">ExportAcousticUiParas</span></span><a class="headerlink" href="#UiParameter.ExportAcousticUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>导出 Acoustic 文件</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self.path</strong> (<em>str</em>) – 导出路径</p></li>
+<li><p><strong>self.freqNum</strong> (<em>num</em>) – 频率点个数</p></li>
+<li><p><strong>self.freqList</strong> (<em>list</em>) – 频率</p></li>
+<li><p><strong>self.sourceList</strong> (<em>list</em>) – 源</p></li>
+<li><p><strong>self.receiverList</strong> (<em>list</em>) – 接收</p></li>
+<li><p><strong>self.direction</strong> (<em>int</em>) – 方向 - 0, 1, 2, 3; 值为0时为Acoustic文件，否则为Elastic文件</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.SingleTraceUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">SingleTraceUiParas</span></span><a class="headerlink" href="#UiParameter.SingleTraceUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#UiParameter.TraceUiParas" title="UiParameter.TraceUiParas"><code class="xref py py-class docutils literal notranslate"><span class="pre">TraceUiParas</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self.trace</strong> (<em>int</em>) – 测线序号，绘制第几条测线</p></li>
+<li><p><strong>self.blog</strong> (<em>bool</em>) – 是否以对数坐标绘制</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.TraceUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">TraceUiParas</span></span><a class="headerlink" href="#UiParameter.TraceUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self.bandPassFilterParas</strong> (<a class="reference internal" href="#UiParameter.BandPassFilterParas" title="UiParameter.BandPassFilterParas"><em>BandPassFilterParas</em></a>) – 滤波器参数实例</p></li>
+<li><p><strong>self.gain</strong> (<em>float</em>) – wiggle增益Gain</p></li>
+<li><p><strong>self.showNum</strong> (<em>int</em>) – 显示测线数量，超过200会使wiggle图绘制缓慢</p></li>
+<li><p><strong>self.bfft</strong> (<em>bool</em>) – 是否进行fft</p></li>
+<li><p><strong>self.bfilter</strong> (<em>bool</em>) – 是否进行带通滤波</p></li>
+<li><p><strong>self.nX</strong> (<em>int</em>) – 横纵坐标显示数</p></li>
+<li><p><strong>self.nY</strong> (<em>int</em>) – </p></li>
+<li><p><strong>self.color</strong> (<em>str</em>) – 绘制颜色, 默认绘制黑色</p></li>
+<li><p><strong>self.bColorImage</strong> (<em>bool</em>) – 是否绘制Image图</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UiParameter.TracesTraceUiParas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">UiParameter.</span></span><span class="sig-name descname"><span class="pre">TracesTraceUiParas</span></span><a class="headerlink" href="#UiParameter.TracesTraceUiParas" title="永久链接至目标"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#UiParameter.TraceUiParas" title="UiParameter.TraceUiParas"><code class="xref py py-class docutils literal notranslate"><span class="pre">TraceUiParas</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self.firstTrace</strong> (<em>int</em>) – 测线序号，从第几条测线开始绘制</p></li>
+<li><p><strong>self.interval</strong> (<em>int</em>) – 绘制间隔，每间隔多少条测线绘制一次</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, XuYang.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

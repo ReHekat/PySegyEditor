@@ -1,0 +1,10 @@
+PySegyEditor
+============
+
+.. toctree::
+   :maxdepth: 4
+
+   PyQt
+   SeismicPlot
+   UiParameter
+   main

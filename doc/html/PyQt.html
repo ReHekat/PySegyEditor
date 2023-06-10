@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyQt package &mdash; PySegyEditor 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PySegyEditor
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">PyQt package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-PyQt.MainWindow">PyQt.MainWindow module</a><ul>
+<li><a class="reference internal" href="#PyQt.MainWindow.Ui_MainWindow"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow</span></code></a><ul>
+<li><a class="reference internal" href="#PyQt.MainWindow.Ui_MainWindow.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow.retranslateUi()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.MainWindow.Ui_MainWindow.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow.setupUi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-PyQt">Module contents</a><ul>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow</span></code></a><ul>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.CRG_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.CRG_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.CRG_show"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.CRG_show()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.CSG_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.CSG_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.CSG_show"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.CSG_show()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.SeismicInit"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.SeismicInit()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.allTraces_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.allTraces_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.allTraces_show"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.allTraces_show()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.colorButton_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.colorButton_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.exportAcoustic"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.exportAcoustic()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.exportAcoustic_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.exportAcoustic_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.exportElastic"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.exportElastic()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.exportFreq"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.exportFreq()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.filterCheck_changed"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.filterCheck_changed()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.filter_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.filter_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.getCurrentParas"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.getCurrentParas()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.info"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.info()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.okButton_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.okButton_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.openFile"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.openFile()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.para_update"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.para_update()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.plot_update"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.plot_update()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.pushButton_AllTraces_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.pushButton_AllTraces_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.pushButton_CRG_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.pushButton_CRG_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.pushButton_CSG_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.pushButton_CSG_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.pushButton_SingleTrace_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.pushButton_SingleTrace_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.pushButton_Traces_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.pushButton_Traces_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.singleTrace_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.singleTrace_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.singleTrace_show"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.singleTrace_show()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.traces_ok_clicked"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.traces_ok_clicked()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.traces_show"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.traces_show()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.ui_init"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.ui_init()</span></code></a></li>
+<li><a class="reference internal" href="#PyQt.SeismicPlotMainWindow.ui_update"><code class="docutils literal notranslate"><span class="pre">SeismicPlotMainWindow.ui_update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#PyQt.pyplot_clear"><code class="docutils literal notranslate"><span class="pre">pyplot_clear()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySegyEditor</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PyQt package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/PyQt.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pyqt-package">
+<h1>PyQt package<a class="headerlink" href="#pyqt-package" title="此标题的永久链接"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="此标题的永久链接"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="PyQt.BandPassFilterDialog.html">PyQt.BandPassFilterDialog package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#module-PyQt.BandPassFilterDialog.BandPassFilterDialog">PyQt.BandPassFilterDialog.BandPassFilterDialog module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#PyQt.BandPassFilterDialog.BandPassFilterDialog.Ui_BandPassFilterDialog"><code class="docutils literal notranslate"><span class="pre">Ui_BandPassFilterDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#PyQt.BandPassFilterDialog.BandPassFilterDialog.Ui_BandPassFilterDialog.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_BandPassFilterDialog.retranslateUi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#PyQt.BandPassFilterDialog.BandPassFilterDialog.Ui_BandPassFilterDialog.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_BandPassFilterDialog.setupUi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#module-PyQt.BandPassFilterDialog">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#PyQt.BandPassFilterDialog.BandPassFilterDialog"><code class="docutils literal notranslate"><span class="pre">BandPassFilterDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#PyQt.BandPassFilterDialog.BandPassFilterDialog.accept"><code class="docutils literal notranslate"><span class="pre">BandPassFilterDialog.accept()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.BandPassFilterDialog.html#PyQt.BandPassFilterDialog.BandPassFilterDialog.signal"><code class="docutils literal notranslate"><span class="pre">BandPassFilterDialog.signal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PyQt.ExportDialog.html">PyQt.ExportDialog package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.ExportDialog.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.ExportDialog.html#module-PyQt.ExportDialog.ExportDialog">PyQt.ExportDialog.ExportDialog module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.Ui_Dialog_Export"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Export</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.Ui_Dialog_Export.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Export.retranslateUi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.Ui_Dialog_Export.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Export.setupUi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.ExportDialog.html#module-PyQt.ExportDialog">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog"><code class="docutils literal notranslate"><span class="pre">ExportDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.accept"><code class="docutils literal notranslate"><span class="pre">ExportDialog.accept()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.freqNumChanged"><code class="docutils literal notranslate"><span class="pre">ExportDialog.freqNumChanged()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.open_clicked"><code class="docutils literal notranslate"><span class="pre">ExportDialog.open_clicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.receiverRadioClicked"><code class="docutils literal notranslate"><span class="pre">ExportDialog.receiverRadioClicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.signal"><code class="docutils literal notranslate"><span class="pre">ExportDialog.signal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.sourceRadioClicked"><code class="docutils literal notranslate"><span class="pre">ExportDialog.sourceRadioClicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.ExportDialog.html#PyQt.ExportDialog.ExportDialog.ui_update"><code class="docutils literal notranslate"><span class="pre">ExportDialog.ui_update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PyQt.InfoDialog.html">PyQt.InfoDialog package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.InfoDialog.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.InfoDialog.html#module-PyQt.InfoDialog.Dialog_info">PyQt.InfoDialog.Dialog_info module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.InfoDialog.html#PyQt.InfoDialog.Dialog_info.Ui_Dialog_info"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_info</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.InfoDialog.html#PyQt.InfoDialog.Dialog_info.Ui_Dialog_info.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_info.retranslateUi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.InfoDialog.html#PyQt.InfoDialog.Dialog_info.Ui_Dialog_info.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_info.setupUi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.InfoDialog.html#module-PyQt.InfoDialog">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.InfoDialog.html#PyQt.InfoDialog.InfoDialog"><code class="docutils literal notranslate"><span class="pre">InfoDialog</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PyQt.SegyEditor.html">PyQt.SegyEditor package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.SegyEditor.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.SegyEditor.html#module-PyQt.SegyEditor.EditorThread">PyQt.SegyEditor.EditorThread module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.EditorThread.ExportAcousticThread"><code class="docutils literal notranslate"><span class="pre">ExportAcousticThread</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.EditorThread.ExportAcousticThread.resSignal"><code class="docutils literal notranslate"><span class="pre">ExportAcousticThread.resSignal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.EditorThread.ExportAcousticThread.run"><code class="docutils literal notranslate"><span class="pre">ExportAcousticThread.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread"><code class="docutils literal notranslate"><span class="pre">ExportFreqSegyThread</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.resSignal"><code class="docutils literal notranslate"><span class="pre">ExportFreqSegyThread.resSignal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.EditorThread.ExportFreqSegyThread.run"><code class="docutils literal notranslate"><span class="pre">ExportFreqSegyThread.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.SegyEditor.html#module-PyQt.SegyEditor.TraceInfo">PyQt.SegyEditor.TraceInfo module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.TraceInfo.TracesInfo"><code class="docutils literal notranslate"><span class="pre">TracesInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.TraceInfo.TracesInfo.getReceiverInfo"><code class="docutils literal notranslate"><span class="pre">TracesInfo.getReceiverInfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceInfo"><code class="docutils literal notranslate"><span class="pre">TracesInfo.getSourceInfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.TraceInfo.TracesInfo.getSourceNum"><code class="docutils literal notranslate"><span class="pre">TracesInfo.getSourceNum()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.SegyEditor.html#module-PyQt.SegyEditor">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor"><code class="docutils literal notranslate"><span class="pre">SegyEditor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor.CRG_CSG_init"><code class="docutils literal notranslate"><span class="pre">SegyEditor.CRG_CSG_init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor.export_acoustic"><code class="docutils literal notranslate"><span class="pre">SegyEditor.export_acoustic()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor.export_elastic"><code class="docutils literal notranslate"><span class="pre">SegyEditor.export_elastic()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor.export_freq_segy"><code class="docutils literal notranslate"><span class="pre">SegyEditor.export_freq_segy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor.open"><code class="docutils literal notranslate"><span class="pre">SegyEditor.open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.SegyEditor.html#PyQt.SegyEditor.SegyEditor.resSlot"><code class="docutils literal notranslate"><span class="pre">SegyEditor.resSlot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PyQt.WaitingDialog.html">PyQt.WaitingDialog package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.WaitingDialog.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.WaitingDialog.html#module-PyQt.WaitingDialog.WaitingDialog">PyQt.WaitingDialog.WaitingDialog module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.WaitingDialog.html#PyQt.WaitingDialog.WaitingDialog.Ui_Dialog_Wating"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Wating</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.WaitingDialog.html#PyQt.WaitingDialog.WaitingDialog.Ui_Dialog_Wating.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Wating.retranslateUi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyQt.WaitingDialog.html#PyQt.WaitingDialog.WaitingDialog.Ui_Dialog_Wating.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Wating.setupUi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyQt.WaitingDialog.html#module-PyQt.WaitingDialog">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyQt.WaitingDialog.html#PyQt.WaitingDialog.WaitingDialog"><code class="docutils literal notranslate"><span class="pre">WaitingDialog</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="此标题的永久链接"></a></h2>
+</section>
+<section id="module-PyQt.MainWindow">
+<span id="pyqt-mainwindow-module"></span><h2>PyQt.MainWindow module<a class="headerlink" href="#module-PyQt.MainWindow" title="此标题的永久链接"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt.MainWindow.Ui_MainWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt.MainWindow.</span></span><span class="sig-name descname"><span class="pre">Ui_MainWindow</span></span><a class="headerlink" href="#PyQt.MainWindow.Ui_MainWindow" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.MainWindow.Ui_MainWindow.retranslateUi">
+<span class="sig-name descname"><span class="pre">retranslateUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.MainWindow.Ui_MainWindow.retranslateUi" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.MainWindow.Ui_MainWindow.setupUi">
+<span class="sig-name descname"><span class="pre">setupUi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.MainWindow.Ui_MainWindow.setupUi" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-PyQt">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-PyQt" title="此标题的永久链接"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt.</span></span><span class="sig-name descname"><span class="pre">SeismicPlotMainWindow</span></span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.CRG_ok_clicked">
+<span class="sig-name descname"><span class="pre">CRG_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CRG_UiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.CRG_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.CRG_show">
+<span class="sig-name descname"><span class="pre">CRG_show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.CRG_show" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.CSG_ok_clicked">
+<span class="sig-name descname"><span class="pre">CSG_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CSG_UiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.CSG_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.CSG_show">
+<span class="sig-name descname"><span class="pre">CSG_show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.CSG_show" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.SeismicInit">
+<span class="sig-name descname"><span class="pre">SeismicInit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.SeismicInit" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.allTraces_ok_clicked">
+<span class="sig-name descname"><span class="pre">allTraces_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allTracesUiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.allTraces_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.allTraces_show">
+<span class="sig-name descname"><span class="pre">allTraces_show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.allTraces_show" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.colorButton_clicked">
+<span class="sig-name descname"><span class="pre">colorButton_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.colorButton_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.exportAcoustic">
+<span class="sig-name descname"><span class="pre">exportAcoustic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.exportAcoustic" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.exportAcoustic_ok_clicked">
+<span class="sig-name descname"><span class="pre">exportAcoustic_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acoustic_UiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.exportAcoustic_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.exportElastic">
+<span class="sig-name descname"><span class="pre">exportElastic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.exportElastic" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.exportFreq">
+<span class="sig-name descname"><span class="pre">exportFreq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.exportFreq" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.filterCheck_changed">
+<span class="sig-name descname"><span class="pre">filterCheck_changed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.filterCheck_changed" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.filter_ok_clicked">
+<span class="sig-name descname"><span class="pre">filter_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_UiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.filter_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.getCurrentParas">
+<span class="sig-name descname"><span class="pre">getCurrentParas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.getCurrentParas" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.info" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.okButton_clicked">
+<span class="sig-name descname"><span class="pre">okButton_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.okButton_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.openFile">
+<span class="sig-name descname"><span class="pre">openFile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.openFile" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.para_update">
+<span class="sig-name descname"><span class="pre">para_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.para_update" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.plot_update">
+<span class="sig-name descname"><span class="pre">plot_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.plot_update" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.pushButton_AllTraces_clicked">
+<span class="sig-name descname"><span class="pre">pushButton_AllTraces_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.pushButton_AllTraces_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.pushButton_CRG_clicked">
+<span class="sig-name descname"><span class="pre">pushButton_CRG_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.pushButton_CRG_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.pushButton_CSG_clicked">
+<span class="sig-name descname"><span class="pre">pushButton_CSG_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.pushButton_CSG_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.pushButton_SingleTrace_clicked">
+<span class="sig-name descname"><span class="pre">pushButton_SingleTrace_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.pushButton_SingleTrace_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.pushButton_Traces_clicked">
+<span class="sig-name descname"><span class="pre">pushButton_Traces_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.pushButton_Traces_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.singleTrace_ok_clicked">
+<span class="sig-name descname"><span class="pre">singleTrace_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">singleTraceUiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.singleTrace_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.singleTrace_show">
+<span class="sig-name descname"><span class="pre">singleTrace_show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.singleTrace_show" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.traces_ok_clicked">
+<span class="sig-name descname"><span class="pre">traces_ok_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracesUiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.traces_ok_clicked" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.traces_show">
+<span class="sig-name descname"><span class="pre">traces_show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.traces_show" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.ui_init">
+<span class="sig-name descname"><span class="pre">ui_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.ui_init" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt.SeismicPlotMainWindow.ui_update">
+<span class="sig-name descname"><span class="pre">ui_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.SeismicPlotMainWindow.ui_update" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyQt.pyplot_clear">
+<span class="sig-prename descclassname"><span class="pre">PyQt.</span></span><span class="sig-name descname"><span class="pre">pyplot_clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyQt.pyplot_clear" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, XuYang.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

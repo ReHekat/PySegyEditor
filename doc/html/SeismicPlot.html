@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeismicPlot package &mdash; PySegyEditor 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PySegyEditor
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">SeismicPlot package</a><ul>
+<li><a class="reference internal" href="#module-SeismicPlot">Module contents</a><ul>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess"><code class="docutils literal notranslate"><span class="pre">SEGYProcess</span></code></a><ul>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.onclick"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.onclick()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.plotCRG"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.plotCRG()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.plotCSG"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.plotCSG()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.plot_allTraces_wiggle"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.plot_allTraces_wiggle()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.plot_singleTrace_wiggle"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.plot_singleTrace_wiggle()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.plot_traces_wiggle"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.plot_traces_wiggle()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.seismic_image"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.seismic_image()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.seismic_wiggle"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.seismic_wiggle()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.set_color"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.set_color()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.set_dt"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.set_dt()</span></code></a></li>
+<li><a class="reference internal" href="#SeismicPlot.SEGYProcess.set_scale"><code class="docutils literal notranslate"><span class="pre">SEGYProcess.set_scale()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PySegyEditor</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SeismicPlot package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SeismicPlot.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="seismicplot-package">
+<h1>SeismicPlot package<a class="headerlink" href="#seismicplot-package" title="此标题的永久链接"></a></h1>
+<section id="module-SeismicPlot">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-SeismicPlot" title="此标题的永久链接"></a></h2>
+<p>SEGY剖面绘制模块</p>
+<p>继承自``FigureCanvasQTAgg``的SEGY剖面绘制模块</p>
+<dl class="simple">
+<dt>用法:</dt><dd><p>self.F = SeismicPlot.SEGYProcess(self.fSegyFile)
+self.F.set_scale(scale)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SeismicPlot.</span></span><span class="sig-name descname"><span class="pre">SEGYProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segyFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess" title="永久链接至目标"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">FigureCanvasQTAgg</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.onclick">
+<span class="sig-name descname"><span class="pre">onclick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.onclick" title="永久链接至目标"></a></dt>
+<dd><p>忘记干啥用的了，意义不明，也许是调试的时候用的</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.plotCRG">
+<span class="sig-name descname"><span class="pre">plotCRG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CRGUiParas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.plotCRG" title="永久链接至目标"></a></dt>
+<dd><p>绘制CRG wiggle图</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>CRGUiParas</strong> (<a class="reference internal" href="UiParameter.html#UiParameter.CRGTraceUiParas" title="UiParameter.CRGTraceUiParas"><em>CRGTraceUiParas</em></a>) – CRG测线参数</p></li>
+<li><p><strong>ranges</strong> – 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))</p></li>
+<li><p><strong>normalize</strong> – True to normalizes all trace in the section using global max/min
+data will be in the range (-0.5, 0.5) zero centered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.plotCSG">
+<span class="sig-name descname"><span class="pre">plotCSG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CSGUiParas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.plotCSG" title="永久链接至目标"></a></dt>
+<dd><p>绘制CSG wiggle图</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>CSGUiParas</strong> (<a class="reference internal" href="UiParameter.html#UiParameter.CSGTraceUiParas" title="UiParameter.CSGTraceUiParas"><em>CSGTraceUiParas</em></a>) – CRG测线参数</p></li>
+<li><p><strong>ranges</strong> – 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))</p></li>
+<li><p><strong>normalize</strong> – True to normalizes all trace in the section using global max/min
+data will be in the range (-0.5, 0.5) zero centered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.plot_allTraces_wiggle">
+<span class="sig-name descname"><span class="pre">plot_allTraces_wiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracesUiParas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.plot_allTraces_wiggle" title="永久链接至目标"></a></dt>
+<dd><p>绘制seismic wiggle.</p>
+<p>Plot a seismic section (numpy 2D array matrix) as wiggles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tracesUiParas</strong> (<a class="reference internal" href="UiParameter.html#UiParameter.TracesTraceUiParas" title="UiParameter.TracesTraceUiParas"><em>TracesTraceUiParas</em></a>) – 测线参数</p></li>
+<li><p><strong>ranges</strong> – 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))</p></li>
+<li><p><strong>normalize</strong> – True to normalizes all trace in the section using global max/min
+data will be in the range (-0.5, 0.5) zero centered</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>Slow for more than 200 traces, in this case decimate your
+data or use <code class="docutils literal notranslate"><span class="pre">seismic_image</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.plot_singleTrace_wiggle">
+<span class="sig-name descname"><span class="pre">plot_singleTrace_wiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">singeTraceUiParas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.plot_singleTrace_wiggle" title="永久链接至目标"></a></dt>
+<dd><p>绘制单条测线的wiggle图</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>singeTraceUiParas</strong> (<a class="reference internal" href="UiParameter.html#UiParameter.SingleTraceUiParas" title="UiParameter.SingleTraceUiParas"><em>SingleTraceUiParas</em></a>) – 测线参数</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.plot_traces_wiggle">
+<span class="sig-name descname"><span class="pre">plot_traces_wiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracesUiParas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.plot_traces_wiggle" title="永久链接至目标"></a></dt>
+<dd><p>绘制seismic wiggle.</p>
+<p>Plot a seismic section (numpy 2D array matrix) as wiggles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tracesUiParas</strong> (<a class="reference internal" href="UiParameter.html#UiParameter.TracesTraceUiParas" title="UiParameter.TracesTraceUiParas"><em>TracesTraceUiParas</em></a>) – 测线参数</p></li>
+<li><p><strong>ranges</strong> – 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))</p></li>
+<li><p><strong>normalize</strong> – True to normalizes all trace in the section using global max/min
+data will be in the range (-0.5, 0.5) zero centered</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>Slow for more than 200 traces, in this case decimate your
+data or use <code class="docutils literal notranslate"><span class="pre">seismic_image</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.seismic_image">
+<span class="sig-name descname"><span class="pre">seismic_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap=&lt;matplotlib.colors.LinearSegmentedColormap</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aspect=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fft=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.seismic_image" title="永久链接至目标"></a></dt>
+<dd><p>Plot a seismic section (numpy 2D array matrix) as an image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>section</strong> (<em>2D array</em>) – matrix of traces (first dimension time, second dimension traces).</p></li>
+<li><p><strong>ranges</strong> (<em>(</em><em>x1</em><em>, </em><em>x2</em><em>)</em>) – min and max horizontal coordinate values (default trace number).</p></li>
+<li><p><strong>cmap</strong> (<em>colormap</em>) – color map to be used. (see pyplot.cm module)</p></li>
+<li><p><strong>aspect</strong> (<em>float</em>) – matplotlib imshow aspect parameter, ratio between axes.</p></li>
+<li><p><strong>vmin</strong> (<em>float</em>) – min values for imshow.</p></li>
+<li><p><strong>vmax</strong> (<em>float</em>) – max values for imshow.</p></li>
+<li><p><strong>fft</strong> (<em>bool</em>) – 是否使用fft变换 (True - 频域图, False - 时域图)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.seismic_wiggle">
+<span class="sig-name descname"><span class="pre">seismic_wiggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'k'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.seismic_wiggle" title="永久链接至目标"></a></dt>
+<dd><p>绘制seismic wiggle.(已弃用，该函数为 <code class="docutils literal notranslate"><span class="pre">plot_traces_wiggle</span></code> 的原型)</p>
+<p>Plot a seismic section (numpy 2D array matrix) as wiggles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>section</strong> (<em>2D array</em>) – matrix of traces (first dimension time, second dimension traces)</p></li>
+<li><p><strong>ranges</strong> – 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))</p></li>
+<li><p><strong>color</strong> – Color for filling the wiggle, positive  and negative lobes.</p></li>
+<li><p><strong>normalize</strong> – True to normalizes all trace in the section using global max/min
+data will be in the range (-0.5, 0.5) zero centered</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>Slow for more than 200 traces, in this case decimate your
+data or use <code class="docutils literal notranslate"><span class="pre">seismic_image</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.set_color">
+<span class="sig-name descname"><span class="pre">set_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.set_color" title="永久链接至目标"></a></dt>
+<dd><p>设置绘制颜色.</p>
+<p>尚未实现.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>str</em>) – 十六进制的颜色字符串，如 #abff4b.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.set_dt">
+<span class="sig-name descname"><span class="pre">set_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.set_dt" title="永久链接至目标"></a></dt>
+<dd><p>设置采样率dt参数.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dt</strong> (<em>float</em>) – 采样率 - sample rate in seconds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SeismicPlot.SEGYProcess.set_scale">
+<span class="sig-name descname"><span class="pre">set_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SeismicPlot.SEGYProcess.set_scale" title="永久链接至目标"></a></dt>
+<dd><p>设置缩放倍率.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scale</strong> (<em>float</em>) – 缩放倍率.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, XuYang.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
