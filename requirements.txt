@@ -1,0 +1,7 @@
+matplotlib==3.5.0
+numpy==1.21.2
+PyQt5==5.15.9
+PyQt5_sip==12.9.0
+scipy==1.7.3
+segyio==1.9.7
+sip==6.7.9

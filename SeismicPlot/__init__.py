@@ -1,3 +1,11 @@
+"""SEGY剖面绘制模块
+
+继承自``FigureCanvasQTAgg``的SEGY剖面绘制模块
+
+用法:
+  self.F = SeismicPlot.SEGYProcess(self.fSegyFile)
+  self.F.set_scale(scale)
+"""
 import numpy as np
 from matplotlib import pyplot
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -9,10 +17,10 @@ from UiParameter import *
 class SEGYProcess(FigureCanvas):
     def __init__(self, segyFile):
         """
-        * dt : float
-                    sample rate in seconds
-        * scale : float
-                    scale factor multiplied by the section values before plotting
+        初始化SEGY处理程序.
+
+        Args:
+            segyFile(str): segy文件路径.
         """
         self.fsegyfile = segyFile  # segyio
         self.fscale = 1  #
@@ -23,16 +31,35 @@ class SEGYProcess(FigureCanvas):
         super(SEGYProcess, self).__init__(self.fig)
 
     def set_dt(self, dt):
+        """
+        设置采样率dt参数.
+
+        Args:
+            dt(float): 采样率 - sample rate in seconds.
+
+        """
         self.fdt = dt
 
     def set_scale(self, scale):
+        """
+        设置缩放倍率.
+
+        Args:
+            scale(float): 缩放倍率.
+
+        """
         self.fscale = scale
 
     def set_color(self, color):
+        """设置绘制颜色.
+
+        尚未实现.
+
+        Args:
+            color(str): 十六进制的颜色字符串，如 #abff4b.
+
         """
-        * color : str
-                十六进制的颜色字符串，如 #abff4b
-        """
+        pass
         # print("")
         # print(len(self.pltList))
         # print(len(self.pltList[0]))
@@ -43,19 +70,16 @@ class SEGYProcess(FigureCanvas):
                       aspect=None, vmin=None, vmax=None, fft=False):
         """
         Plot a seismic section (numpy 2D array matrix) as an image.
-        Parameters:
-        * section :  2D array
-            matrix of traces (first dimension time, second dimension traces)
-        * dt : float
-            sample rate in seconds
-        * ranges : (x1, x2)
-            min and max horizontal coordinate values (default trace number)
-        * cmap : colormap
-            color map to be used. (see pyplot.cm module)
-        * aspect : float
-            matplotlib imshow aspect parameter, ratio between axes
-        * vmin, vmax : float
-            min and max values for imshow
+
+        Args:
+            section(2D array):  matrix of traces (first dimension time, second dimension traces).
+            ranges((x1, x2)): min and max horizontal coordinate values (default trace number).
+            cmap(colormap): color map to be used. (see pyplot.cm module)
+            aspect(float): matplotlib imshow aspect parameter, ratio between axes.
+            vmin(float): min values for imshow.
+            vmax(float): max values for imshow.
+            fft(bool): 是否使用fft变换 (True - 频域图, False - 时域图)
+
         """
         npts, maxtraces = section.shape  # time/traces
         if maxtraces < 1:
@@ -93,27 +117,29 @@ class SEGYProcess(FigureCanvas):
         self.fig.canvas.mpl_connect('button_press_event', self.onclick)
 
     def onclick(self, event):
+        """
+        忘记干啥用的了，意义不明，也许是调试的时候用的
+
+        Args:
+            event:
+
+        """
         print(event.xdata, event.ydata)
         #self.coordinates.extend([event.xdata, event.ydata])
 
     def seismic_wiggle(self, section, ranges=None, color='k',
                        normalize=False):
-        """
+        """绘制seismic wiggle.(已弃用，该函数为 ``plot_traces_wiggle`` 的原型)
+
         Plot a seismic section (numpy 2D array matrix) as wiggles.
-        Parameters:
-        * section :  2D array
-            matrix of traces (first dimension time, second dimension traces)
-        * dt : float
-            sample rate in seconds
-        * ranges : (x1, x2) 暂不使用，与traceRange冲突
-            min and max horizontal values (default trace number)
-        * scale : float
-            scale factor multiplied by the section values before plotting
-        * color : tuple of strings
-            Color for filling the wiggle, positive  and negative lobes.
-        * normalize :
-            True to normalizes all trace in the section using global max/min
-            data will be in the range (-0.5, 0.5) zero centered
+
+        Args:
+            section(2D array): matrix of traces (first dimension time, second dimension traces)
+            ranges: 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))
+            color: Color for filling the wiggle, positive  and negative lobes.
+            normalize: True to normalizes all trace in the section using global max/min
+                data will be in the range (-0.5, 0.5) zero centered
+
         .. warning::
             Slow for more than 200 traces, in this case decimate your
             data or use ``seismic_image``.
@@ -146,6 +172,15 @@ class SEGYProcess(FigureCanvas):
             pyplot.fill_betweenx(t, x + tr, x, tr > 0, color=color)
 
     def plot_singleTrace_wiggle(self, singeTraceUiParas):
+        """
+        绘制单条测线的wiggle图
+
+        Args:
+            singeTraceUiParas(SingleTraceUiParas): 测线参数
+
+        Returns:
+            None
+        """
         pyplot.locator_params(axis='x', nbins=singeTraceUiParas.nX)  # x轴标签显示数量
         pyplot.locator_params(axis='y', nbins=singeTraceUiParas.nY)  # y轴标签显示数量
         npts = len(self.fsegyfile.samples)
@@ -171,6 +206,20 @@ class SEGYProcess(FigureCanvas):
             pyplot.plot(x, traceData, color=singeTraceUiParas.color)
 
     def plot_traces_wiggle(self, tracesUiParas, ranges=None, normalize=False):
+        """绘制seismic wiggle.
+
+        Plot a seismic section (numpy 2D array matrix) as wiggles.
+
+        Args:
+            tracesUiParas(TracesTraceUiParas): 测线参数
+            ranges: 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))
+            normalize: True to normalizes all trace in the section using global max/min
+                data will be in the range (-0.5, 0.5) zero centered
+
+        .. warning::
+            Slow for more than 200 traces, in this case decimate your
+            data or use ``seismic_image``.
+        """
         tracesUiParas.showNum = (self.fsegyfile.tracecount - tracesUiParas.firstTrace) // tracesUiParas.interval
         if tracesUiParas.showNum < 0:
             raise IndexError("showNum Error, Nothing to plot")
@@ -187,10 +236,10 @@ class SEGYProcess(FigureCanvas):
                 section[i] = section_tmp[i * tracesUiParas.interval]
                 _x_ticks[i] = int(i * tracesUiParas.interval)
         # filter处理
-        section = self.filter(tracesUiParas, section)
+        section = self._filter(tracesUiParas, section)
         # fft处理
         if tracesUiParas.bfft:
-            section = self.fftPlot(tracesUiParas, section)
+            section = self._fftPlot(tracesUiParas, section)
         pyplot.xlabel('Trace Number')
         section = section.T
         if tracesUiParas.bColorImage:
@@ -238,24 +287,16 @@ class SEGYProcess(FigureCanvas):
                     pyplot.fill_betweenx(t, x + tr, x, tr > 0, color=tracesUiParas.color)
 
     def plot_allTraces_wiggle(self, tracesUiParas, ranges=None, normalize=False):
-        """
+        """绘制seismic wiggle.
+
         Plot a seismic section (numpy 2D array matrix) as wiggles.
-        Parameters:
-        * showNum: int
-            显示的测线数（加快显示速度
-        * section :  2D array
-            matrix of traces (first dimension time, second dimension traces)
-        * dt : float
-            sample rate in seconds
-        * ranges : (x1, x2) 暂不使用，与traceRange冲突
-            min and max horizontal values (default trace number)
-        * scale : float
-            scale factor multiplied by the section values before plotting
-        * color : tuple of strings
-            Color for filling the wiggle, positive  and negative lobes.
-        * normalize :
-            True to normalizes all trace in the section using global max/min
-            data will be in the range (-0.5, 0.5) zero centered
+
+        Args:
+            tracesUiParas(TracesTraceUiParas): 测线参数
+            ranges: 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))
+            normalize: True to normalizes all trace in the section using global max/min
+                data will be in the range (-0.5, 0.5) zero centered
+
         .. warning::
             Slow for more than 200 traces, in this case decimate your
             data or use ``seismic_image``.
@@ -276,10 +317,10 @@ class SEGYProcess(FigureCanvas):
                 section[i] = section_tmp[i * interval]
                 _x_ticks[i] = int(i * interval)
         # filter处理
-        section = self.filter(tracesUiParas, section)
+        section = self._filter(tracesUiParas, section)
         # fft处理
         if tracesUiParas.bfft:
-            section = self.fftPlot(tracesUiParas, section)
+            section = self._fftPlot(tracesUiParas, section)
         section = section.T
         pyplot.xlabel('Trace Number')
         if tracesUiParas.bColorImage:
@@ -327,6 +368,16 @@ class SEGYProcess(FigureCanvas):
                     pyplot.fill_betweenx(t, x + tr, x, tr > 0, color=tracesUiParas.color)
 
     def plotCRG(self, CRGUiParas, ranges=None, normalize=False):
+        """
+        绘制CRG wiggle图
+
+        Args:
+            CRGUiParas(CRGTraceUiParas): CRG测线参数
+            ranges: 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))
+            normalize: True to normalizes all trace in the section using global max/min
+                data will be in the range (-0.5, 0.5) zero centered
+
+        """
         CRG_List = []
         CRG_x_List = []
         # 查找 receiver == receiver_depth 的trace
@@ -366,10 +417,10 @@ class SEGYProcess(FigureCanvas):
                 _x_ticks[i] = CRG_x_List[i * interval]
         # 绘制
         # filter处理
-        section = self.filter(CRGUiParas, section)
+        section = self._filter(CRGUiParas, section)
         # fft处理
         if CRGUiParas.bfft:
-            section = self.fftPlot(CRGUiParas, section)
+            section = self._fftPlot(CRGUiParas, section)
         section = section.T
         if CRGUiParas.bColorImage:
             self.seismic_image(section, fft=CRGUiParas.bfft)
@@ -423,6 +474,16 @@ class SEGYProcess(FigureCanvas):
                     pyplot.fill_betweenx(t, x + tr, x, tr > 0, color=CRGUiParas.color)
 
     def plotCSG(self, CSGUiParas, ranges=None, normalize=False):
+        """
+        绘制CSG wiggle图
+
+        Args:
+            CSGUiParas(CSGTraceUiParas): CRG测线参数
+            ranges: 暂不使用，与traceRange冲突. (min and max horizontal values (default trace number))
+            normalize: True to normalizes all trace in the section using global max/min
+                data will be in the range (-0.5, 0.5) zero centered
+
+        """
         CSG_List = []
         CSG_x_List = []
         # 查找 source == source_depth 的trace
@@ -462,10 +523,10 @@ class SEGYProcess(FigureCanvas):
                 _x_ticks[i] = CSG_x_List[i * interval]
         # 绘制
         # filter处理
-        section = self.filter(CSGUiParas, section)
+        section = self._filter(CSGUiParas, section)
         # fft处理
         if CSGUiParas.bfft:
-            section = self.fftPlot(CSGUiParas, section)
+            section = self._fftPlot(CSGUiParas, section)
         # 图注处理
         pyplot.title("CSG plot, Source Depth=" + str(CSGUiParas.depth) + "ft")
         pyplot.xlabel('Receiver Depth')
@@ -520,7 +581,11 @@ class SEGYProcess(FigureCanvas):
                 if not CSGUiParas.bfft:
                     pyplot.fill_betweenx(t, x + tr, x, tr > 0, color=CSGUiParas.color)
 
-    def fftPlot(self, tracesUiParas, section):
+    def _fftPlot(self, tracesUiParas, section):
+        """
+        对section剖面执行`FFT变换`，得到频域图
+
+        """
         N = len(self.fsegyfile.samples)
         fft_len = section.shape[0]
         fftSection = np.zeros((fft_len, N // 2))
@@ -530,8 +595,11 @@ class SEGYProcess(FigureCanvas):
             fftSection[i] = np.log10(np.abs(np.fft.fft(section[i])[:N // 2]))
         return fftSection
 
-    def filter(self, tracesUiParas, section):
-        # Filter 处理
+    def _filter(self, tracesUiParas, section):
+        """
+        对section剖面执行`滤波`处理
+
+        """
         if tracesUiParas.bfilter:
             N, Wn = signal.buttord([tracesUiParas.bandPassFilterParas.F_pass1, tracesUiParas.bandPassFilterParas.F_pass2],
                                    [tracesUiParas.bandPassFilterParas.F_stop1, tracesUiParas.bandPassFilterParas.F_stop2],
